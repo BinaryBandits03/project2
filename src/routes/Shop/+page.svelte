@@ -1,15 +1,8 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     
     let rating = $state(4.3);
     let totalRatings = $state(526);
     let price = $state(1234.56);
-  
-    // Generate star rating display
-    $effect(() => {
-      const fullStars = Math.floor(rating);
-      const hasHalfStar = rating % 1 >= 0.5;
-    });
   </script>
   
   <div class="min-h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300">
@@ -65,7 +58,7 @@
           <!-- Rating -->
           <div class="flex items-center space-x-2">
             <div class="flex text-yellow-400">
-              {#each Array(5) as _, i}
+              {#each Array(5) as i}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5"
