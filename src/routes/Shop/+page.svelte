@@ -7,7 +7,7 @@
   
   <div class="min-h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300">
     <!-- Navigation -->
-    <nav class="p-4 bg-white/10 backdrop-blur-sm">
+    <nav class="p-6 bg-white/10 backdrop-blur-sm">
       <div class="container mx-auto flex justify-between items-center px-6">
         <!-- Logo -->
         <div class="flex items-center">
