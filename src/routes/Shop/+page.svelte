@@ -36,7 +36,7 @@
           <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <div class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8">
             <img
-              src="Assets/product.png"
+              src="/Assets/product.png"
               alt="HomePod"
               class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"
             />
