@@ -20,10 +20,10 @@
   
         <!-- Navigation Links -->
         <div class="hidden md:flex space-x-8">
-          <a href="/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-          <a href="/" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
-          <a href="/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-          <a href="/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+          <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+          <a href="https://binarybandits03.github.io/project2/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+          <a href="https://binarybandits03.github.io/project2/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+          <a href="https://binarybandits03.github.io/project2/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
         </div>
       </div>
     </nav>
@@ -36,7 +36,7 @@
           <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <div class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8">
             <img
-              src="/Assets/product.png"
+              src="/assets/product.png"
               alt="HomePod"
               class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"
             />

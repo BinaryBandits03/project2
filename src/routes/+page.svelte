@@ -21,10 +21,10 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
-          <a href="project2" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Home</a>
-          <a href="Shop" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Shop</a>
-          <a href="About" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">About</a>
-          <a href="Contact" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Contact</a>
+          <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Home</a>
+          <a href="https://binarybandits03.github.io/project2/Shop" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Shop</a>
+          <a href="https://binarybandits03.github.io/project2/About" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">About</a>
+          <a href="https://binarybandits03.github.io/project2/Contact" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Contact</a>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -43,10 +43,10 @@
       {#if isMenuOpen}
         <div class="md:hidden absolute top-16 left-0 right-0 bg-white/80 backdrop-blur-md">
           <div class="flex flex-col space-y-4 p-4">
-            <a href="project2" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Home</a>
-            <a href="Shop" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Shop</a>
-            <a href="About" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">About</a>
-            <a href="Contact" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Contact</a>
+            <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Home</a>
+          <a href="https://binarybandits03.github.io/project2/Shop" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Shop</a>
+          <a href="https://binarybandits03.github.io/project2/About" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">About</a>
+          <a href="https://binarybandits03.github.io/project2/Contact" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Contact</a>
           </div>
         </div>
       {/if}
@@ -76,7 +76,7 @@
           <div class="relative group">
             <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
             <img 
-              src="/Assets/product.png" 
+              src="/assets/product.png" 
               alt="HomePod" 
               class="relative w-full max-w-md md:max-w-lg xl:max-w-xl transform hover:scale-105 transition-all duration-500"
             />
