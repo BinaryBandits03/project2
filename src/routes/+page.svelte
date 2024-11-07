@@ -22,9 +22,9 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
           <a href="/" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Home</a>
-          <a href="/Shop" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Shop</a>
-          <a href="/About" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">About</a>
-          <a href="/Contact" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Contact</a>
+          <a href="Shop" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Shop</a>
+          <a href="About" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">About</a>
+          <a href="Contact" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Contact</a>
         </div>
         
         <!-- Mobile Menu Button -->
