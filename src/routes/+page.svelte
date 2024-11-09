@@ -43,11 +43,11 @@
       <!-- Mobile Menu -->
       {#if isMenuOpen}
         <div class="md:hidden absolute top-16 left-0 right-0 bg-white/80 backdrop-blur-md">
-          <div class="flex flex-col space-y-4 p-4">
-          <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Home</a>
-          <a href="https://binarybandits03.github.io/project2/Shop" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Shop</a>
-          <a href="https://binarybandits03.github.io/project2/About" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">About</a>
-          <a href="https://binarybandits03.github.io/project2/Contact" class="text-gray-700 hover:text-violet-800 transition-colors duration-300">Contact</a>
+          <div class="hidden md:flex space-x-8">
+            <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+            <a href="{base}/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+            <a href="{base}/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+            <a href="{base}/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
           </div>
         </div>
       {/if}
@@ -64,7 +64,7 @@
           </p>
           <div class="flex gap-4">
             <button class="bg-white/30 hover:bg-white/40 text-gray-700 px-8 py-3 rounded-full backdrop-blur-sm transition-all duration-300 shadow-sm hover:shadow-md">
-            <a href ="https://binarybandits03.github.io/project2/Shop">View</a>  
+            <a href ="{base}/shop">View</a>  
             </button>
             <button class="bg-violet-500 hover:bg-violet-600 text-white px-8 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
               Buy now
