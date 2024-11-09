@@ -80,7 +80,7 @@
       <div class="p-6">
         <div class="relative aspect-video mb-4">
           <img
-            src="path_to_your_homepod_image.jpg"
+            src="product.png"
             alt="HomePod"
             class="w-full h-full object-cover rounded-lg"
           />
