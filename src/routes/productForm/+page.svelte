@@ -75,7 +75,10 @@
       }
     }
     </script>
-    
+
+
+
+   <div class="h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300 flex flex-col overflow-hidden">
     <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
       <div class="p-6">
         <div class="relative aspect-video mb-4">
@@ -154,7 +157,7 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">
+                    <label class="block text-sm font-medium text-gray-700">Email
                     <input
                       type="email"
                       name="Email"
@@ -167,7 +170,7 @@
                   </div>
                   
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">
+                    <label class="block text-sm font-medium text-gray-700">Phone Number
                     <input
                       type="tel"
                       name="Phone Number"
@@ -182,7 +185,7 @@
                 
                 <div class="grid grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">
+                    <label class="block text-sm font-medium text-gray-700">Country
                     <select
                       name="Country"
                       bind:value={formData.country}
@@ -194,7 +197,7 @@
                   </div>
                   
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">
+                    <label class="block text-sm font-medium text-gray-700">Region
                     <select
                       name="Region"
                       bind:value={formData.region}
@@ -208,7 +211,7 @@
                 
                 <div class="grid grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">
+                    <label class="block text-sm font-medium text-gray-700">City/Municipality
                     <select
                       name="City/Municipality"
                       bind:value={formData.cityMunicipality}
@@ -220,7 +223,7 @@
                   </div>
                   
                   <div>
-                    <label class="block text-sm font-medium text-gray-700">
+                    <label class="block text-sm font-medium text-gray-700">Barangay
                     <select
                       name="Barangay"
                       bind:value={formData.barangay}
@@ -233,7 +236,7 @@
                 </div>
                 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700">
+                  <label class="block text-sm font-medium text-gray-700">Street Address
                   <input
                     name="Street Address"
                     type="text"
@@ -281,3 +284,4 @@
         </div>
       {/if}
     </div>
+  </div>

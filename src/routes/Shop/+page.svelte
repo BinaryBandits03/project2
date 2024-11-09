@@ -1,14 +1,91 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import {goto} from '$app/navigation';
+  
   let rating = $state(4.3);
   let totalRatings = $state(526);
   let price = $state(1234.56);
+  
+      // Define interfaces for our data structures
+      interface FormData {
+      firstName: string;
+      lastName: string;
+      email: string;
+      phoneNumber: string;
+      country: string;
+      region: string;
+      cityMunicipality: string;
+      barangay: string;
+      street: string;
+      quantity: number;
+    }
+    
+    interface FormErrors {
+      firstName?: string;
+      lastName?: string;
+      email?: string;
+      phoneNumber?: string;
+    }
+    
+    let formData = $state<FormData>({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      country: '',
+      region: '',
+      cityMunicipality: '',
+      barangay: '',
+      street: '',
+      quantity: 3
+    });
+    
+    let errors = $state<FormErrors>({});
+    let showOrderForm = $state(false);
+    
+    function validateName(name: string): boolean {
+      return /^[A-Za-z\s]+$/.test(name);
+    }
+    
+    function validateEmail(email: string): boolean {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.endsWith('.com');
+    }
+    
+    function validatePhone(phone: string): boolean {
+      return /^\d{11}$/.test(phone);
+    }
+    
+    function handleSubmit(): void {
+      const currentErrors: FormErrors = {};
+      
+      if (!validateName(formData.firstName)) {
+        currentErrors.firstName = 'First name should only contain letters';
+      }
+      
+      if (!validateName(formData.lastName)) {
+        currentErrors.lastName = 'Last name should only contain letters';
+      }
+      
+      if (!validateEmail(formData.email)) {
+        currentErrors.email = 'Invalid email format';
+      }
+      
+      if (!validatePhone(formData.phoneNumber)) {
+        currentErrors.phoneNumber = 'Phone number must be 11 digits';
+      }
+      
+      errors = currentErrors;
+      
+      if (Object.keys(currentErrors).length === 0) {
+        console.log('Form submitted:', formData);
+        showOrderForm = false;
+      }
+    }
 </script>
   
-  <div class="h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300 flex flex-col overflow-hidden">
-    <!-- Navigation -->
-    <nav class="bg-gradient-to-r from-violet-200 to-violet-300 backdrop-blur-sm border-b border-white/20">
+<div class="h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300 flex flex-col overflow-hidden">
+  <!-- Navigation -->
+  <nav class="bg-gradient-to-r from-violet-200 to-violet-300 backdrop-blur-sm border-b border-white/20">
         <div class="container mx-auto flex justify-between items-center px-6 py-3">
             <!-- Logo -->
             <div class="flex items-center">
@@ -96,15 +173,180 @@
           </div>
   
           <!-- Buy Button -->
-          <button class="w-full bg-violet-600 hover:bg-violet-700 text-white py-4 px-6 rounded-full flex items-center justify-center space-x-2 transition-colors duration-300">
-            <span class="font-semibold">
-              <a href="/productForm">Buy Now</a></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-            </svg>
+          <button 
+    class="w-full bg-violet-600 hover:bg-violet-700 text-white py-4 px-6 rounded-full flex items-center justify-center space-x-2 transition-colors duration-300"
+    onclick={() => showOrderForm = true}>
+      <span class="font-semibold">Buy Now</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+      </svg>
+    </button>
+  </main>
+
+  <!-- Order Form Modal -->
+  {#if showOrderForm}
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+          <h2 class="text-2xl font-bold mb-6">Order Form</h2>
+          
+          <form onsubmit={(e) => { e.preventDefault(); handleSubmit();}} class="space-y-4">
+            <!-- ... (paste all the form fields from your order form code) ... -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label 
+                  for="firstName" 
+                  class="block text-sm font-medium text-gray-700">First Name</label>
+                <input
+                  id="firstName"
+                  type="text"
+                  bind:value={formData.firstName}
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"/>
+                {#if errors.firstName}
+                  <p class="text-red-500 text-sm mt-1">{errors.firstName}</p>
+                {/if}
+              </div>
+            
+              <div>
+                  <label 
+                    for="lastName" 
+                    class="block text-sm font-medium text-gray-700">Last Name</label>
+                  <input
+                    id="lastName"
+                    type="text"
+                    bind:value={formData.lastName}
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"/>
+                  {#if errors.lastName}
+                    <p class="text-red-500 text-sm mt-1">{errors.lastName}</p>
+                  {/if}
+                </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Email
+              <input
+                type="email"
+                name="Email"
+                bind:value={formData.email}   
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"/>
+              </label>
+              {#if errors.email}
+                <p class="text-red-500 text-sm mt-1">{errors.email}</p>
+              {/if}
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Phone Number
+              <input
+                type="tel"
+                name="Phone Number"
+                bind:value={formData.phoneNumber}
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"/>
+            </label>
+              {#if errors.phoneNumber}
+                <p class="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
+              {/if}
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Country
+              <select
+                name="Country"
+                bind:value={formData.country}
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
+                <option value="">Select Country</option>
+                <option value="PH">Philippines</option>
+              </select>
+          </label>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Region
+              <select
+                name="Region"
+                bind:value={formData.region}
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
+                <option value="">Select Region</option>
+                <option value="NCR">NCR</option>
+              </select>
+              </label>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">City/Municipality
+              <select
+                name="City/Municipality"
+                bind:value={formData.cityMunicipality}
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
+                <option value="">Select City</option>
+                <option value="Manila">Manila</option>
+              </select>
+              </label>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Barangay
+              <select
+                name="Barangay"
+                bind:value={formData.barangay}
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
+                <option value="">Select Barangay</option>
+                <option value="Barangay1">Gordon Heights</option>
+              </select>
+              </label>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Street Address
+            <input
+              name="Street Address"
+              type="text"
+              bind:value={formData.street}
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"
+            />
+            </label>
+          </div>
+          
+          <div class="flex items-center justify-between border-t pt-4">
+              <div class="flex items-center space-x-2">
+                  <button
+                    type="button"
+                    onclick={() => formData.quantity = Math.max(1, formData.quantity - 1)}
+                    class="p-1 rounded-md border border-gray-300 hover:bg-gray-50">-</button>
+                  <span>{formData.quantity}</span>
+                  <button
+                    type="button"
+                    onclick={() => formData.quantity = formData.quantity + 1}
+                    class="p-1 rounded-md border border-gray-300 hover:bg-gray-50">+</button>
+                </div>
+            
+            <div class="text-xl font-bold">
+              ₱{(formData.quantity * 1234.56).toFixed(2)}
+            </div>
+          </div>
+            <!-- Form Buttons -->
+            <div class="flex justify-end space-x-4">
+              <button
+              type="button"
+              onclick={() => showOrderForm = false}
+              class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+              Cancel
           </button>
+
+              <button
+                type="submit"
+                class="px-4 py-2 bg-violet-600 text-white rounded-md hover:bg-violet-700">
+                Place Order
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </main>
-  </div>
-  
+    </div>
+  {/if}
+</div>
