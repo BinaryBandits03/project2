@@ -1,26 +1,26 @@
 <script>
 </script>
-<div class="h-screen overflow-hidden bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300">
+<div class="h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300 flex flex-col overflow-hidden">
   <!-- Navigation -->
-  <nav class="p-4 bg-white/10 backdrop-blur-sm">
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <img
-          src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-primary-logo-456baa801ee66a0a435671082365958316831c9960c480451dd0330bcdae304f.svg"
-          alt="Shopify"
-          class="h-8 w-auto"
-        />
-      </div>
+  <nav class="bg-gradient-to-r from-violet-200 to-violet-300 backdrop-blur-sm border-b border-white/20">
+      <div class="container mx-auto flex justify-between items-center px-6 py-3">
+          <!-- Logo -->
+          <div class="flex items-center">
+              <img
+                  src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-primary-logo-456baa801ee66a0a435671082365958316831c9960c480451dd0330bcdae304f.svg"
+                  alt="Shopify"
+                  class="h-8 w-auto"
+              />
+          </div>
 
-      <!-- Navigation Links -->
-      <div class="hidden md:flex space-x-8">
-        <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-        <a href="https://binarybandits03.github.io/project2/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
-        <a href="https://binarybandits03.github.io/project2/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-        <a href="https://binarybandits03.github.io/project2/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+          <!-- Navigation Links -->
+          <div class="hidden md:flex space-x-8">
+              <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+              <a href="https://binarybandits03.github.io/project2/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+              <a href="https://binarybandits03.github.io/project2/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+              <a href="https://binarybandits03.github.io/project2/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+          </div>
       </div>
-    </div>
   </nav>
 
   <!-- About Section -->
