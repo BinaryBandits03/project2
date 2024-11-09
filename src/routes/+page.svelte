@@ -23,9 +23,9 @@
         <!-- Navigation Links -->
         <div class="hidden md:flex space-x-8">
           <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-          <a href="https://binarybandits03.github.io/project2/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
-          <a href="https://binarybandits03.github.io/project2/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-          <a href="https://binarybandits03.github.io/project2/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+          <a href="https://binarybandits03.github.io/project2/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+          <a href="https://binarybandits03.github.io/project2/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+          <a href="https://binarybandits03.github.io/project2/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
       </div>
         
         <!-- Mobile Menu Button -->
