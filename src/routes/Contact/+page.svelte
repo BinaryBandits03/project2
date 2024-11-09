@@ -1,5 +1,8 @@
 <script lang="ts">
-  let formValues = $state({
+
+import { base } from '$app/paths';
+  
+let formValues = $state({
     name: '', email: '', phone: '', message: '',
     nameError: '', emailError: '', phoneError: ''
   })
@@ -80,10 +83,10 @@ const handleSubmit = () => {
 
           <!-- Navigation Links -->
           <div class="hidden md:flex space-x-8">
-              <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-              <a href="https://binarybandits03.github.io/project2/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
-              <a href="https://binarybandits03.github.io/project2/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-              <a href="https://binarybandits03.github.io/project2/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+            <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+            <a href="{base}/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+            <a href="{base}/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+            <a href="{base}/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
           </div>
       </div>
   </nav>

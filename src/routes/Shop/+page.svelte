@@ -1,9 +1,10 @@
 <script lang="ts">
-    import {goto} from '$app/navigation';
-    let rating = $state(4.3);
-    let totalRatings = $state(526);
-    let price = $state(1234.56);
-  </script>
+  import { base } from '$app/paths';
+  import {goto} from '$app/navigation';
+  let rating = $state(4.3);
+  let totalRatings = $state(526);
+  let price = $state(1234.56);
+</script>
   
   <div class="h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300 flex flex-col overflow-hidden">
     <!-- Navigation -->
@@ -20,10 +21,10 @@
   
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8">
-                <a href="https://binarybandits03.github.io/project2/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-                <a href="https://binarybandits03.github.io/project2/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
-                <a href="https://binarybandits03.github.io/project2/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-                <a href="https://binarybandits03.github.io/project2/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+              <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+              <a href="{base}/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+              <a href="{base}/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+              <a href="{base}/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -97,7 +98,7 @@
           <!-- Buy Button -->
           <button class="w-full bg-violet-600 hover:bg-violet-700 text-white py-4 px-6 rounded-full flex items-center justify-center space-x-2 transition-colors duration-300">
             <span class="font-semibold">
-              <a href="/productForm" onclick={handleClick}>Buy Now</a></span>
+              <a href="/productForm">Buy Now</a></span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
             </svg>
