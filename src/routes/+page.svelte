@@ -53,7 +53,6 @@
       {/if}
     </nav>
   
-    <!-- Hero Section -->
     <main class="container mx-auto px-16">
       <div class="flex flex-col md:flex-row items-center justify-between h-[calc(100vh-5rem)] gap-8">
         <!-- Text Content -->
