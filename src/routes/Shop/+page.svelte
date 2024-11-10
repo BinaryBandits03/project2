@@ -145,10 +145,7 @@
               Built to adventure with you, this rugged speaker boasts an IPX7 waterproof rating, 
               20-hour battery life, and a drop-resistant design that can handle whatever life throws at it. 
               Connect instantly via Bluetooth 5.0 or aux input, and enjoy seamless pairing with your devices up to 100 feet away, 
-              perfect for backyard parties or beach days. The sleek, modern design features intuitive touch controls, 
-              oice assistant compatibility, and a built-in microphone for hands-free calls, all wrapped in a premium fabric covering 
-              that looks as good as it sounds. Experience premium sound without the premium price tag – the SoundWave Pro X delivers 
-              professional-grade audio quality and features at just $1234.56, making it the smart choice for discerning music lovers.
+              perfect for backyard parties or beach days.
             </p>
           </div>
   
