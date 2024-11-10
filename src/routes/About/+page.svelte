@@ -51,32 +51,28 @@
           <img 
             src="{base}/Assets/bluetooth 1.jpg" 
             alt="HomePod" 
-            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"
-          />
+            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"/>
         </div>
         <div class="relative group">
           <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <img 
             src="{base}/Assets/bluetooth 2.jpg" 
             alt="HomePod" 
-            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"
-          />
+            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"/>
         </div>
         <div class="relative group">
           <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <img 
             src="{base}/Assets/bluetooth 3.jpg" 
             alt="HomePod" 
-            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"
-          />
+            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"/>
         </div>
         <div class="relative group">
           <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <img 
             src="{base}/Assets/bluetooth 4.jpg" 
             alt="HomePod" 
-            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"
-          />
+            class="relative w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg transform hover:scale-105 transition-all duration-500"/>
         </div>
       </div>
     </div>
