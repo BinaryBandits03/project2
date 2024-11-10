@@ -105,8 +105,7 @@ const handleSubmit = () => {
                           id="name"
                           bind:value={formValues.name}
                           class="w-full px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                          placeholder="Enter your name"
-                      />
+                          placeholder="Enter your name"/>
                       {#if formValues.nameError}
                           <p class="text-red-500 text-sm mt-1">{formValues.nameError}</p>
                       {/if}
@@ -119,8 +118,7 @@ const handleSubmit = () => {
                           oninput={(e) => formValues.email = (e.target as HTMLInputElement).value}
                           value={formValues.email}
                           class="w-full px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                          placeholder="Enter your email"
-                      />
+                          placeholder="Enter your email"/>
                       {#if formValues.emailError}
                           <p class="text-red-500 text-sm mt-1">{formValues.emailError}</p>
                       {/if}
@@ -133,8 +131,7 @@ const handleSubmit = () => {
                           oninput={(e) => formValues.phone = (e.target as HTMLInputElement).value}
                           value={formValues.phone}
                           class="w-full px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                          placeholder="Enter your phone number"
-                      />
+                          placeholder="Enter your phone number"/>
                       {#if formValues.phoneError}
                           <p class="text-red-500 text-sm mt-1">{formValues.phoneError}</p>
                       {/if}
@@ -146,13 +143,11 @@ const handleSubmit = () => {
                           bind:value={formValues.message}
                           class="w-full px-4 py-2 rounded-2xl bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                           rows="3"
-                          placeholder="Enter your message"
-                      ></textarea>
+                          placeholder="Enter your message"></textarea>
                   </div>
                   <button
                       type="submit"
-                      class="w-full bg-violet-500 hover:bg-violet-600 text-white py-2 px-4 rounded-full transition-colors duration-300"
-                  >
+                      class="w-full bg-violet-500 hover:bg-violet-600 text-white py-2 px-4 rounded-full transition-colors duration-300">
                       Submit
                   </button>
               </form>

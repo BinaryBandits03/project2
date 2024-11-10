@@ -16,8 +16,7 @@
             <img
                 src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-primary-logo-456baa801ee66a0a435671082365958316831c9960c480451dd0330bcdae304f.svg"
                 alt="Shopify"
-                class="h-8 w-auto"
-            />
+                class="h-8 w-auto"/>
         </div>
   
         <!-- Navigation Links -->
