@@ -89,8 +89,7 @@
               <img
                 src="{base}/Assets/product.png" 
                 alt="SoundWave Pro X"
-                class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"
-              />
+                class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"/>
             </div>
           </div>
   
@@ -116,8 +115,7 @@
                       class="absolute w-full h-full text-gray-300"
                       xmlns="http://www.w3.org/2000/svg" 
                       viewBox="0 0 24 24" 
-                      fill="currentColor"
-                    >
+                      fill="currentColor">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
                     <!-- Filled star (overlay) -->
@@ -126,8 +124,7 @@
                         class="w-full h-full text-yellow-400"
                         xmlns="http://www.w3.org/2000/svg" 
                         viewBox="0 0 24 24" 
-                        fill="currentColor"
-                      >
+                        fill="currentColor">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
@@ -301,8 +298,7 @@
               name="Street Address"
               type="text"
               bind:value={formData.street}
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"
-            />
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500" />
             </label>
           </div>
           
@@ -343,5 +339,4 @@
       </div>
     </div>
     {/if}
-  
   </div>
