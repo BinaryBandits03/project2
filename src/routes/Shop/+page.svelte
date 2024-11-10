@@ -83,7 +83,7 @@
             <div class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8">
               <img
                 src="{base}/Assets/product.png" 
-                alt="HomePod"
+                alt="SoundWave Pro X"
                 class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"
               />
             </div>
@@ -92,7 +92,7 @@
         <!-- Product Details -->
         <div class="space-y-6">
             <div>
-              <h1 class="text-4xl font-bold text-gray-800 mb-2">HomePod</h1>
+              <h1 class="text-4xl font-bold text-gray-800 mb-2">SoundWave Pro X </h1>
               <p class="text-gray-600">by Shopify</p>
             </div>
     
@@ -126,7 +126,15 @@
           <div class="space-y-4">
             <h2 class="font-semibold text-gray-800">Description</h2>
             <p class="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              The SoundWave Pro X delivers room-filling, crystal-clear audio with dual high-fidelity drivers and a 
+              dedicated bass radiator that brings your music to life with stunning depth and clarity. 
+              Built to adventure with you, this rugged speaker boasts an IPX7 waterproof rating, 
+              20-hour battery life, and a drop-resistant design that can handle whatever life throws at it. 
+              Connect instantly via Bluetooth 5.0 or aux input, and enjoy seamless pairing with your devices up to 100 feet away, 
+              perfect for backyard parties or beach days. The sleek, modern design features intuitive touch controls, 
+              oice assistant compatibility, and a built-in microphone for hands-free calls, all wrapped in a premium fabric covering 
+              that looks as good as it sounds. Experience premium sound without the premium price tag – the SoundWave Pro X delivers 
+              professional-grade audio quality and features at just $129.99, making it the smart choice for discerning music lovers.
             </p>
           </div>
   
@@ -134,7 +142,9 @@
           <div class="bg-white/30 backdrop-blur-sm rounded-lg p-4">
             <h2 class="font-semibold text-gray-800 mb-2">Note</h2>
             <p class="text-gray-600 text-sm">
-              Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing.
+              Products with electrical plugs are designed for use in the US. 
+              Outlets and voltage differ internationally and this product may require an adapter 
+              or converter for use in your destination. Please check compatibility before purchasing.
             </p>
           </div>
   

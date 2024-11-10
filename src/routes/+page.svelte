@@ -60,7 +60,7 @@
       <div class="flex flex-col md:flex-row items-center justify-between h-[calc(100vh-5rem)] gap-8">
         <!-- Text Content -->
         <div class="flex-1 text-left pl-12">
-          <h1 class="text-6xl font-bold mb-4 text-gray-800">HomePod</h1>
+          <h1 class="text-6xl font-bold mb-4 text-gray-800">SoundWave Pro X </h1>
           <p class="text-xl mb-8 max-w-md text-gray-700">
             is a brand of smart speaker systems developed by Shopify Inc.
           </p>
@@ -80,7 +80,7 @@
             <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
             <img 
               src="{base}/Assets/product.png" 
-              alt="HomePod" 
+              alt="SoundWave Pro X " 
               class="relative w-full max-w-md md:max-w-lg xl:max-w-xl transform hover:scale-105 transition-all duration-500"
             />
           </div>
