@@ -22,10 +22,10 @@
   
         <!-- Navigation Links -->
         <div class="hidden md:flex space-x-8">
-            <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-            <a href="{base}/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
-            <a href="{base}/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-            <a href="{base}/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+          <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+          <a href="{base}/shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+          <a href="{base}/about" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+          <a href="{base}/contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -66,7 +66,7 @@
             <a href ="{base}/shop">View</a>  
             </button>
             <button class="bg-violet-500 hover:bg-violet-600 text-white px-8 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
-              Buy now
+             <a href ="{base}/about"> Buy now</a>
             </button>
           </div>
         </div>
@@ -76,7 +76,7 @@
           <div class="relative group">
             <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
             <img 
-              src="Assets/product.png" 
+              src="{base}/Assets/product.png" 
               alt="HomePod" 
               class="relative w-full max-w-md md:max-w-lg xl:max-w-xl transform hover:scale-105 transition-all duration-500"
             />

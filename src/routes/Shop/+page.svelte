@@ -127,7 +127,7 @@
             <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
             <div class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8">
               <img
-                src="Assets/product.png"
+                src="{base}/Assets/product.png" 
                 alt="HomePod"
                 class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"
               />
@@ -197,7 +197,7 @@
         </div>
       </div>
     </main>
-    
+
     {#if showOrderForm}
     <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
       <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">

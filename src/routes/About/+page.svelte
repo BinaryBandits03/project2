@@ -40,7 +40,7 @@
         <div class="relative group">
           <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <img 
-          src="Assets/product.png" 
+          src="{base}/Assets/product.png" 
           alt="HomePod" 
           class="relative w-full max-w-md md:max-w-lg xl:max-w-xl transform hover:scale-105 transition-all duration-500"
         />
@@ -48,7 +48,7 @@
         <div class="relative group">
           <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <img 
-          src="Assets/product.png" 
+          src="{base}/Assets/product.png" 
           alt="HomePod" 
           class="relative w-full max-w-md md:max-w-lg xl:max-w-xl transform hover:scale-105 transition-all duration-500"
         />
@@ -56,7 +56,7 @@
         <div class="relative group">
           <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <img 
-          src="Assets/product.png" 
+          src="{base}/Assets/product.png" 
           alt="HomePod" 
           class="relative w-full max-w-md md:max-w-lg xl:max-w-xl transform hover:scale-105 transition-all duration-500"
         />
@@ -64,7 +64,7 @@
         <div class="relative group">
           <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-violet-300 to-violet-400 opacity-40 blur-xl group-hover:opacity-75 transition duration-500"></div>
           <img 
-          src="Assets/product.png" 
+          src="{base}/Assets/product.png" 
           alt="HomePod" 
           class="relative w-full max-w-md md:max-w-lg xl:max-w-xl transform hover:scale-105 transition-all duration-500"
         />
