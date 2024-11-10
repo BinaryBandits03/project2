@@ -1,6 +1,5 @@
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-const dev = process.env.NODE_ENV === 'production';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,9 +12,13 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter({ pages: "build", assets: "build", fallback: undefined, precompress: false, strict: true })
 	},
+	prerender: {
+		entries: ['*'],
+		handleHttpError: 'warn'
+	},
 	paths: {
-		base: dev ? '' : '/project2'
-	  },
+		base: process.env.NODE_ENV === 'production' ? '/project2' : ''  // Replace 'project2' with your repo name
+	},
 };
 
 export default config;
