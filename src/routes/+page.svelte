@@ -66,7 +66,7 @@
           </p>
           <div class="flex gap-4">
             <button class="bg-white/30 hover:bg-white/40 text-gray-700 px-8 py-3 rounded-full backdrop-blur-sm transition-all duration-300 shadow-sm hover:shadow-md">
-            <a href="{base}/About">View</a>  
+              <a href="{base}/About">View</a>  
             </button>
             <button class="bg-violet-500 hover:bg-violet-600 text-white px-8 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
               <a href="{base}/Shop"> Buy now</a>
