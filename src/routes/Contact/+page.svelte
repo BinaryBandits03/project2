@@ -77,6 +77,7 @@ const toggleMobileMenu = () => {
   isMobileMenuOpen = !isMobileMenuOpen;
 };
 </script>
+<!-- svelte-ignore css_unused_selector -->
 <style>
     .active-link {
       color: #7C3AED;
