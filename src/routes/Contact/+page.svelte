@@ -68,10 +68,10 @@ const handleSubmit = () => {
   
 </script>
 
-<div class="h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300 flex flex-col overflow-hidden">
-  <!-- Navigation -->
-  <nav class="bg-gradient-to-r from-violet-200 to-violet-300 backdrop-blur-sm border-b border-white/20">
-      <div class="container mx-auto flex justify-between items-center px-6 py-3">
+<div class="min-h-screen bg-gradient-to-b from-[#ACB1D6] via-[#E1AFD1] to-[#7469B6] flex flex-col overflow-hidden">
+    <!-- Navigation -->
+  <nav class="bg-gradient-to-r from-[#FFE6E6] to-[#FFE6E6] backdrop-blur-sm border-b border-white/20">
+    <div class="container mx-auto flex justify-between items-center px-6 py-3">
           <!-- Logo -->
           <div class="flex items-center">
               <img
