@@ -1,13 +1,22 @@
 <script lang="ts">
     import { base } from '$app/paths';
+    import { page } from '$app/stores';
     import { FormValidator, type FormData, type FormErrors } from '$lib/formValidator';
     import { updateQuantity } from '$lib/formValidator';
+
+    let isMobileMenuOpen = false;
+    let isMenuOpen = $state(false);
+
+    const toggleMenu = () => {
+        isMenuOpen = !isMenuOpen;
+    };
 
     let rating = $state(4.3);
     let totalRatings = $state(526); 
     let price = $state(1234.56);
     let quantity = $state(0)
   
+    
     const close = new CustomEvent('close')
   
 
@@ -108,29 +117,91 @@
       const fillAmount = Math.max(0, Math.min(1, rating - starIndex));
       return `${fillAmount * 100}%`;
   }
+  const toggleMobileMenu = () => {
+  isMobileMenuOpen = !isMobileMenuOpen;
+};
+  
 </script>
+
+<style>
+  nav {
+    z-index: 50;
+  }
+  .mobile-menu {
+    z-index: 40;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+</style>
   
-  <div class="min-h-screen bg-gradient-to-b from-[#ACB1D6] via-[#E1AFD1] to-[#7469B6] flex flex-col overflow-hidden">
-    <!-- Navigation -->
-    <nav class="bg-gradient-to-r from-[#FFE6E6] to-[#FFE6E6] backdrop-blur-sm border-b border-white/20">
-      <div class="container mx-auto flex justify-between items-center px-6 py-3">
-            <!-- Logo -->
-            <div class="flex items-center">
-              <img
-              src="{base}/Assets/logo.png" 
-              alt="Shopify"
-                class="h-6 sm:h-8 w-auto "
-              />
-            </div>
-  
-            <!-- Navigation Links -->
-            <div class="hidden md:flex space-x-8">
-              <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-              <a href="{base}/Shop" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Shop</a>
-              <a href="{base}/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-              <a href="{base}/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
-            </div>
+<div class="min-h-screen bg-gradient-to-b from-[#ACB1D6] via-[#E1AFD1] to-[#7469B6] flex flex-col overflow-hidden">
+  <!-- Navigation -->
+  <nav class="bg-gradient-to-r from-[#FFE6E6] to-[#FFE6E6] backdrop-blur-sm border-b border-white/20">
+    <div class="container mx-auto flex justify-between items-center px-6 py-3">
+      <!-- Logo -->
+        <div class="flex items-center">
+          <img
+            src="{base}/Assets/logo.png"
+            alt="Shopify"
+            class="h-6 sm:h-8 w-auto"
+          />
         </div>
+  
+        <!-- Mobile Menu Button -->
+        <button 
+        class="md:hidden p-2"
+        onclick={toggleMenu}
+        aria-label="Toggle navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+  
+        <!-- Navigation Links -->
+        <div class="hidden md:flex space-x-8">
+          <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+          <a href="{base}/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+          <a href="{base}/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+          <a href="{base}/Contact" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Contact</a>
+        </div>
+      </div>
+      {#if isMenuOpen}
+    <div class="md:hidden absolute top-16 left-0 right-0 bg-white/80 backdrop-blur-md">
+      <div class="space-y-4 px-6 py-4">
+        <a href="{base}/" 
+          class="block text-gray-700 hover:text-violet-800 transition-colors"
+          class:active-link={$page.url.pathname === `${base}/`}>
+          Home
+        </a>
+        <a href="{base}/Shop"
+          class="block text-violet-800  hover:text-violet-800 transition-colors font-bold"
+          class:active-link={$page.url.pathname === `${base}/Shop`}>
+          Shop
+        </a>
+        <a href="{base}/About"
+          class="block text-gray-700 hover:text-violet-800 transition-colors"
+          class:active-link={$page.url.pathname === `${base}/About`}>
+          About
+        </a>
+        <a href="{base}/Contact"
+          class="block text-gray-700 hover:text-violet-800 transition-colors "
+          class:active-link={$page.url.pathname === `${base}/Contact`}>
+          Contact
+        </a>
+      </div>
+    </div>
+  {/if}
+  
+      <!-- Mobile Menu -->
+      <div class="hidden md:hidden flex-col items-center space-y-2 px-6 py-3 bg-white/80" id="mobile-menu">
+        <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
+        <a href="{base}/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+        <a href="{base}/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
+        <a href="{base}/Contact" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Contact</a>
+      </div>
     </nav>
   
     <!-- Main Content -->
