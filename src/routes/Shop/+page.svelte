@@ -63,16 +63,17 @@
       <div class="container mx-auto flex justify-between items-center px-6 py-3">
             <!-- Logo -->
             <div class="flex items-center">
-                <img
-                    src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-primary-logo-456baa801ee66a0a435671082365958316831c9960c480451dd0330bcdae304f.svg"
-                    alt="Shopify"
-                    class="h-8 w-auto"/>
+              <img
+              src="{base}/Assets/logo.png" 
+              alt="Shopify"
+                class="h-6 sm:h-8 w-auto "
+              />
             </div>
   
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8">
               <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-              <a href="{base}/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+              <a href="{base}/Shop" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Shop</a>
               <a href="{base}/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
               <a href="{base}/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
             </div>
@@ -257,7 +258,7 @@
                 bind:value={formData.region}
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
                 <option value="">Select Region</option>
-                <option value="NCR">NCR</option>
+                <option value="NCR">Region3</option>
               </select>
               </label>
             </div>

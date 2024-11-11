@@ -13,25 +13,30 @@ let formValues = $state({
 
     // Validate name
     if (!formValues.name.trim()) {
-        formValues.nameError = 'Name is required';
-        isValid = false;
-    } else if (/\d|[!@#$%^&*(),.?":{}|<>]/.test(formValues.name)) {
-        formValues.nameError = 'Name cannot contain numbers or special characters';
-        isValid = false;
-    } else {
-        formValues.nameError = '';
-    }
+  formValues.nameError = 'Name is required';
+  isValid = false;
+} else if (!/^[a-zA-Z0-9_\-\.\s]+$/.test(formValues.name)) {
+  formValues.nameError = 'Name contains invalid characters';
+  isValid = false;
+} else {
+  formValues.nameError = '';
+}
+
 
     // Validate email
     if (!formValues.email.trim()) {
-        formValues.emailError = 'Email is required';
-        isValid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
-        formValues.emailError = 'Invalid email address';
-        isValid = false;
-    } else {
-        formValues.emailError = '';
-    }
+  formValues.emailError = 'Email is required';
+  isValid = false;
+} else if (!/^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formValues.email)) {
+  formValues.emailError = 'Invalid email address';
+  isValid = false;
+} else if (!/(gmail\.com|yahoo\.com)$/i.test(formValues.email)) {
+  formValues.emailError = 'Only Gmail and Yahoo email addresses are accepted';
+  isValid = false;
+} else {
+  formValues.emailError = '';
+}
+
 
     // Validate phone
     if (!formValues.phone.trim()) {
@@ -74,11 +79,11 @@ const handleSubmit = () => {
     <div class="container mx-auto flex justify-between items-center px-6 py-3">
           <!-- Logo -->
           <div class="flex items-center">
-              <img
-                  src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-primary-logo-456baa801ee66a0a435671082365958316831c9960c480451dd0330bcdae304f.svg"
-                  alt="Shopify"
-                  class="h-8 w-auto"
-              />
+            <img
+            src="{base}/Assets/logo.png" 
+            alt="Shopify"
+              class="h-6 sm:h-8 w-auto "
+            />
           </div>
 
           <!-- Navigation Links -->
@@ -86,7 +91,7 @@ const handleSubmit = () => {
             <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
             <a href="{base}/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
             <a href="{base}/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-            <a href="{base}/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
+            <a href="{base}/Contact" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Contact</a>
           </div>
       </div>
   </nav>
@@ -111,30 +116,29 @@ const handleSubmit = () => {
                       {/if}
                   </div>
                   <div>
-                      <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
-                      <input
-                          type="email"
-                          id="email"
-                          oninput={(e) => formValues.email = (e.target as HTMLInputElement).value}
-                          value={formValues.email}
-                          class="w-full px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                          placeholder="Enter your email"/>
-                      {#if formValues.emailError}
-                          <p class="text-red-500 text-sm mt-1">{formValues.emailError}</p>
-                      {/if}
+                    <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      bind:value={formValues.email}
+                      class="w-full px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                      placeholder="Enter your email" />
+                    {#if formValues.emailError}
+                      <p class="text-red-500 text-sm mt-1">{formValues.emailError}</p>
+                    {/if}
                   </div>
                   <div>
-                      <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
-                      <input
-                          type="tel"
-                          id="phone"
-                          oninput={(e) => formValues.phone = (e.target as HTMLInputElement).value}
-                          value={formValues.phone}
-                          class="w-full px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
-                          placeholder="Enter your phone number"/>
-                      {#if formValues.phoneError}
-                          <p class="text-red-500 text-sm mt-1">{formValues.phoneError}</p>
-                      {/if}
+                    <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      bind:value={formValues.phone}
+                      oninput={handlePhoneInput}
+                      class="w-full px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                      placeholder="Enter your phone number" />
+                    {#if formValues.phoneError}
+                      <p class="text-red-500 text-sm mt-1">{formValues.phoneError}</p>
+                    {/if}
                   </div>
                   <div>
                       <label for="message" class="block text-gray-700 font-medium mb-1">Message</label>
