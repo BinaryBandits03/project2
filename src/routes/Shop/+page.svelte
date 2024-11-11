@@ -48,8 +48,13 @@
   }
 
 
-    // Helper function to create star array for rating
+    // create star array for rating
     const stars = Array(5);
+
+    function getStarFill(starIndex: number): string {
+    const fillAmount = Math.max(0, Math.min(1, rating - starIndex));
+    return `${fillAmount * 100}%`;
+  }
   </script>
   
   <div class="min-h-screen bg-gradient-to-b from-violet-100 via-violet-200 to-violet-300 flex flex-col overflow-hidden">
@@ -83,16 +88,15 @@
             <div class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8">
               <img
                 src="{base}/Assets/product.png" 
-                alt="HomePod"
-                class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"
-              />
+                alt="SoundWave Pro X"
+                class="w-full max-w-md mx-auto transform hover:scale-105 transition-all duration-500"/>
             </div>
           </div>
   
         <!-- Product Details -->
         <div class="space-y-6">
             <div>
-              <h1 class="text-4xl font-bold text-gray-800 mb-2">HomePod</h1>
+              <h1 class="text-4xl font-bold text-gray-800 mb-2">SoundWave Pro X </h1>
               <p class="text-gray-600">by Shopify</p>
             </div>
     
@@ -102,31 +106,46 @@
             </div>
     
             <!-- Rating -->
-            <div class="flex items-center space-x-2">
-              <div class="flex text-yellow-400">
-                {#each Array(5) as i}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill={i < rating ? 'currentColor' : 'none'}
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
-                  </svg>
+            <div class="flex items-center gap-2">
+              <div class="flex">
+                {#each stars as _, i}
+                  <div class="relative w-5 h-5">
+                    <!-- Empty star (background) -->
+                    <svg 
+                      class="absolute w-full h-full text-gray-300"
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      fill="currentColor">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <!-- Filled star (overlay) -->
+                    <div class="absolute w-full h-full overflow-hidden" style="width: {getStarFill(i)}">
+                      <svg 
+                        class="w-full h-full text-yellow-400"
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" 
+                        fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    </div>
+                  </div>
                 {/each}
               </div>
-              <span class="text-gray-600">{rating} ({totalRatings} ratings)</span>
+              <span class="text-gray-600">
+                {rating} ({totalRatings} ratings)
+              </span>
             </div>
   
           <!-- Description -->
           <div class="space-y-4">
             <h2 class="font-semibold text-gray-800">Description</h2>
             <p class="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              The SoundWave Pro X delivers room-filling, crystal-clear audio with dual high-fidelity drivers and a 
+              dedicated bass radiator that brings your music to life with stunning depth and clarity. 
+              Built to adventure with you, this rugged speaker boasts an IPX7 waterproof rating, 
+              20-hour battery life, and a drop-resistant design that can handle whatever life throws at it. 
+              Connect instantly via Bluetooth 5.0 or aux input, and enjoy seamless pairing with your devices up to 100 feet away, 
+              perfect for backyard parties or beach days.
             </p>
           </div>
   
@@ -134,7 +153,9 @@
           <div class="bg-white/30 backdrop-blur-sm rounded-lg p-4">
             <h2 class="font-semibold text-gray-800 mb-2">Note</h2>
             <p class="text-gray-600 text-sm">
-              Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing.
+              Products with electrical plugs are designed for use in the US. 
+              Outlets and voltage differ internationally and this product may require an adapter 
+              or converter for use in your destination. Please check compatibility before purchasing.
             </p>
           </div>
   
@@ -274,8 +295,7 @@
               name="Street Address"
               type="text"
               bind:value={formData.street}
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"
-            />
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500" />
             </label>
           </div>
           
@@ -316,5 +336,4 @@
       </div>
     </div>
     {/if}
-  
   </div>
