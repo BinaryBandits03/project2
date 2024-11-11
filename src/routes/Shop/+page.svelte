@@ -35,27 +35,80 @@
     function decreaseQuantity() {
       formData.quantity = updateQuantity.decrease(formData.quantity);
     }
+
+    function validateName(name: string):string | null{
+      const nameRegex = /^[A-Za-z]+$/;
+      return nameRegex.test(name) ? null : 'Name must contain only letters';
+    }
+
+    function validateEmail(email: string): string | null {
+      if (!email.trim()) {
+          return 'Email is required';
+      } else if (!/^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+          return 'Invalid email address';
+      } else if (!/(gmail\.com|yahoo\.com)$/i.test(email)) {
+          return 'Only Gmail and Yahoo email addresses are accepted';
+      }
+      return null;
+  }
   
+    function validatePhoneNumber(phone: string): string | null {
+      const phoneRegex = /^\d{11}$/;
+      return phoneRegex.test(phone) ? null : 'Phone number must be 11 digits long and contain only numbers';
+  }
+
   function handleSubmit(): void {
       const currentErrors: FormErrors = {};
-      
-      errors = FormValidator.validateForm(formData);
-        
-        if (FormValidator.isFormValid(errors)) {
-            console.log('Form submitted:', FormData);
-            showOrderForm = false;
+
+      // Validate first name and last name
+      const firstNameError = validateName(formData.firstName);
+      if (firstNameError) {
+          currentErrors.firstName = firstNameError;
+      }
+
+      const lastNameError = validateName(formData.lastName);
+      if (lastNameError) {
+          currentErrors.lastName = lastNameError;
+      }
+
+      // Validate email
+      const emailError = validateEmail(formData.email);
+      if (emailError) {
+          currentErrors.email = emailError;
+      }
+
+      // Validate phone number
+      const phoneError = validatePhoneNumber(formData.phoneNumber);
+      if (phoneError) {
+          currentErrors.phoneNumber = phoneError;
+      }
+
+      // Validate other form fields
+      errors = { ...currentErrors, ...FormValidator.validateForm(formData) };
+
+      if (FormValidator.isFormValid(errors)) {
+          console.log('Form submitted:', formData);
+          showOrderForm = false;
       }
   }
 
-
-    // create star array for rating
-    const stars = Array(5);
-
-    function getStarFill(starIndex: number): string {
-    const fillAmount = Math.max(0, Math.min(1, rating - starIndex));
-    return `${fillAmount * 100}%`;
+  function handlePhoneInput(event: Event) {
+      const input = event.target as HTMLInputElement;
+      // Remove any non-numeric characters
+      formData.phoneNumber = input.value.replace(/\D/g, '');
   }
-  </script>
+
+  function handleNameInput(event: Event, field: 'firstName' | 'lastName'): void {
+      const input = event.target as HTMLInputElement;
+      formData[field] = input.value.replace(/[^A-Za-z]/g, ''); // Remove non-letter characters
+  }
+
+  const stars = Array(5);
+  function getStarFill(starIndex: number): string {
+      const fillAmount = Math.max(0, Math.min(1, rating - starIndex));
+      return `${fillAmount * 100}%`;
+  }
+</script>
   
   <div class="min-h-screen bg-gradient-to-b from-[#ACB1D6] via-[#E1AFD1] to-[#7469B6] flex flex-col overflow-hidden">
     <!-- Navigation -->
@@ -175,11 +228,11 @@
 
     {#if showOrderForm}
     <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="bg-[#E1AFD1] rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div class="p-6">
-          <h2 class="text-2xl font-bold mb-6">Order Form</h2>
+          <h2 class="text-2xl text-center font-bold mb-6">Order Form</h2>
           
-          <form onsubmit={(e) => { e.preventDefault(); handleSubmit();}} class="space-y-4">
+          <form onsubmit={(e) => { e.preventDefault(); handleSubmit();}} class="space-y-6">
             <!-- ... (paste all the form fields from your order form code) ... -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -190,6 +243,7 @@
                   id="firstName"
                   type="text"
                   bind:value={formData.firstName}
+                  oninput={(e) => handleNameInput(e, 'firstName')}
                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"/>
                 {#if errors.firstName}
                   <p class="text-red-500 text-sm mt-1">{errors.firstName}</p>
@@ -204,6 +258,7 @@
                     id="lastName"
                     type="text"
                     bind:value={formData.lastName}
+                    oninput={(e) => handleNameInput(e, 'lastName')}
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"/>
                   {#if errors.lastName}
                     <p class="text-red-500 text-sm mt-1">{errors.lastName}</p>
@@ -230,7 +285,9 @@
                 type="tel"
                 name="Phone Number"
                 bind:value={formData.phoneNumber}
+                oninput={handlePhoneInput}
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"/>
+
             </label>
               {#if errors.phoneNumber}
                 <p class="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
@@ -241,14 +298,14 @@
           <div class="grid grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-700">Country
-              <select
+                <select
                 name="Country"
                 bind:value={formData.country}
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
                 <option value="">Select Country</option>
                 <option value="PH">Philippines</option>
-              </select>
-          </label>
+                </select>
+              </label>
             </div>
             
             <div>
@@ -305,12 +362,12 @@
                   <button
                     type="button"
                     onclick={() => formData.quantity = Math.max(1, formData.quantity - 1)}
-                    class="p-1 rounded-md border border-gray-300 hover:bg-gray-50">-</button>
+                    class="p-1 rounded-md border bg-red-50 border-gray-500 hover:bg-gray-50">-</button>
                   <span>{formData.quantity}</span>
                   <button
                     type="button"
                     onclick={() => formData.quantity = formData.quantity + 1}
-                    class="p-1 rounded-md border border-gray-300 hover:bg-gray-50">+</button>
+                    class="p-1 rounded-md border bg-red-50 border-gray-500 hover:bg-gray-50">+</button>
                 </div>
             
             <div class="text-xl font-bold">
@@ -322,7 +379,7 @@
               <button
               type="button"
               onclick={() => showOrderForm = false}
-              class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+              class="px-4 py-2 bg-red-200 rounded-md text-white hover:bg-red-300">
               Cancel
           </button>
     
