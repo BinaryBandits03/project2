@@ -163,9 +163,9 @@
         <!-- Navigation Links -->
         <div class="hidden md:flex space-x-8">
           <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-          <a href="{base}/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+          <a href="{base}/Shop" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Shop</a>
           <a href="{base}/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-          <a href="{base}/Contact" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Contact</a>
+          <a href="{base}/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
         </div>
       </div>
       {#if isMenuOpen}
@@ -198,9 +198,9 @@
       <!-- Mobile Menu -->
       <div class="hidden md:hidden flex-col items-center space-y-2 px-6 py-3 bg-white/80" id="mobile-menu">
         <a href="{base}/" class="text-gray-700 hover:text-violet-800 transition-colors">Home</a>
-        <a href="{base}/Shop" class="text-gray-700 hover:text-violet-800 transition-colors">Shop</a>
+        <a href="{base}/Shop" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Shop</a>
         <a href="{base}/About" class="text-gray-700 hover:text-violet-800 transition-colors">About</a>
-        <a href="{base}/Contact" class="text-violet-800 hover:text-violet-800 transition-colors font-bold">Contact</a>
+        <a href="{base}/Contact" class="text-gray-700 hover:text-violet-800 transition-colors">Contact</a>
       </div>
     </nav>
   
